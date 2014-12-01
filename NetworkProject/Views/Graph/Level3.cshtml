@@ -53,7 +53,6 @@
             .on("tick", tick)
             .charge(-1200)        
             .start();
-
         var svg = d3.select("body").append("svg")
             .attr("width", width)
             .attr("height", height);
@@ -92,11 +91,9 @@
             .attr("class", "node")
             .style("fill", function (d) { return color(d.group); })
             .call(force.drag);
-
         // add the nodes
         node.append("circle")
             .attr("r", function (d) { return (counterInLinksNodes[d.index] + 4); });
-
         // add the text
         node.append("text")
             .attr("x", 12)
