@@ -120,9 +120,7 @@
                     targetY = d.target.y - (targetPadding * normY);
                 return 'M' + sourceX + ',' + sourceY + 'L' + targetX + ',' + targetY;
             });
-
-            node.attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
-
+            node.attr("transform", function (d) { return "translate(' + d.x + ',' + d.y + ')"; });
         }
     });    
 </script>
