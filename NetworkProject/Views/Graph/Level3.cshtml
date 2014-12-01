@@ -41,9 +41,7 @@
 
         var width = $(document).width() -20;
         var height = $(document).height() -20;
-
         var color = d3.scale.category20();
-
         var force = d3.layout.force()
             .nodes(graph.nodes)
             .links(graph.links)
