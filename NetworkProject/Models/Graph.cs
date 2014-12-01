@@ -7,7 +7,6 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Web;
-
 namespace NetworkProject.Models
 {
     /// <summary>
@@ -17,7 +16,6 @@ namespace NetworkProject.Models
     {
          public static Collection<Node> Nodes { get; set; }
          public static Collection<Link> Links { get; set; }
-
          // static holder for instance, need to use lambda to construct since constructor private
          private static readonly Lazy<Graph> _instance = new Lazy<Graph>(() => new Graph());
   
@@ -27,9 +25,8 @@ namespace NetworkProject.Models
              Nodes = new Collection<Node>();
              Links = new Collection<Link>();
              InitDbWithJson();
-             //SaveChangesToJson();
          }
-  
+         
          // accessor for instance
          public static Graph Instance
          {
