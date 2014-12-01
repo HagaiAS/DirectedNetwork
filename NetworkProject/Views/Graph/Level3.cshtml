@@ -25,9 +25,8 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
-// get the data
+    // get the data
     d3.json('@Url.Action("VisualizationData")', function(error, graph) {
-
         var counterInLinksNodes = {};
         // init count for incoming links counter to 0.
         for (var i = 0; i < graph.nodes.length; i++) {
