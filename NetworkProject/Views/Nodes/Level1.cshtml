@@ -1,0 +1,104 @@
+﻿@model IEnumerable<NetworkProject.Models.Node>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Node", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NodeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InLinks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutLinks)
+        </th>
+        <th>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NodeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            <table class="table">
+                <tr>
+                    <th>Source Node Id</th>
+                    <th>Source Node Name</th>
+                    <th>@Html.ActionLink("Add Link", "CreateLink", new { SourceNodeId = -1, TargetNodeID = item.NodeID })</th>
+                </tr>
+                @if (item.InLinks.Count == 0)
+                {
+                    <tr>No links Inside of the Node</tr>
+                }
+                else
+                {
+                    foreach (var i in item.InLinks)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => i.SourceNode.NodeID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => i.SourceNode.Name)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Delete Link", "DeleteLink", new { SourceNodeId = i.SourceNode.NodeID, TargetNodeID = i.TargetNode.NodeID })
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </td>
+        <td>
+            <table class="table">
+                <tr>
+                    <th>Target Node Id</th>
+                    <th>Target Node Name</th>
+                    <th>@Html.ActionLink("Add Link", "CreateLink", new { SourceNodeId = item.NodeID, TargetNodeID = -1 })</th>
+                </tr>
+                @if (item.OutLinks.Count == 0)
+                {
+                    <tr>No links Outside of the Node</tr>
+                }
+                else
+                {
+                    foreach (var i in item.OutLinks)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => i.TargetNode.NodeID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => i.TargetNode.Name)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Delete Link", "DeleteLink", new { SourceNodeId = i.SourceNode.NodeID, TargetNodeID = i.TargetNode.NodeID })
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </td>
+        <td>
+            @Html.ActionLink("Edit Node Name", "Edit", new { id=item.NodeID }) |
+            @Html.ActionLink("Delete Node", "Delete", new { id=item.NodeID })
+        </td>
+    </tr>
+}
+</table>

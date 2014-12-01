@@ -1,0 +1,162 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "Hagai"
+        },
+        {
+            "id": 1,
+            "name": "Napoleon"
+        },
+        {
+            "id": 2,
+            "name": "Mlle.Baptistine"
+        },
+        {
+            "id": 3,
+            "name": "Mme.Magloire"
+        },
+        {
+            "id": 4,
+            "name": "CountessdeLo"
+        },
+        {
+            "id": 5,
+            "name": "Geborand"
+        },
+        {
+            "id": 6,
+            "name": "Champtercier"
+        },
+        {
+            "id": 7,
+            "name": "Cravatte"
+        },
+        {
+            "id": 8,
+            "name": "Count"
+        },
+        {
+            "id": 9,
+            "name": "OldMan"
+        },
+        {
+            "id": 10,
+            "name": "Labarre"
+        },
+        {
+            "id": 11,
+            "name": "Valjean"
+        },
+        {
+            "id": 12,
+            "name": "Marguerite"
+        },
+        {
+            "id": 13,
+            "name": "Isabeau"
+        },
+        {
+            "id": 14,
+            "name": "Asaban"
+        }
+    ],
+    "links": [
+        {
+            "source": 1,
+            "target": 0
+        },
+        {
+            "source": 2,
+            "target": 1
+        },
+        {
+            "source": 3,
+            "target": 4
+        },
+        {
+            "source": 3,
+            "target": 2
+        },
+        {
+            "source": 4,
+            "target": 0
+        },
+        {
+            "source": 5,
+            "target": 6
+        },
+        {
+            "source": 6,
+            "target": 7
+        },
+        {
+            "source": 7,
+            "target": 0
+        },
+        {
+            "source": 8,
+            "target": 2
+        },
+        {
+            "source": 9,
+            "target": 2
+        },
+        {
+            "source": 6,
+            "target": 0
+        },
+        {
+            "source": 12,
+            "target": 2
+        },
+        {
+            "source": 13,
+            "target": 0
+        },
+        {
+            "source": 10,
+            "target": 6
+        },
+        {
+            "source": 13,
+            "target": 7
+        },
+        {
+            "source": 7,
+            "target": 10
+        },
+        {
+            "source": 9,
+            "target": 12
+        },
+        {
+            "source": 12,
+            "target": 13
+        },
+        {
+            "source": 8,
+            "target": 6
+        },
+        {
+            "source": 7,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 5,
+            "target": 0
+        },
+        {
+            "source": 14,
+            "target": 0
+        },
+        {
+            "source": 9,
+            "target": 14
+        }
+    ]
+}
